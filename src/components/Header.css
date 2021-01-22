@@ -1,0 +1,36 @@
+header {
+   display: flex;
+   background: #173f5f;
+   color: #f6d55c;
+   justify-content: space-around;
+   align-items: center;
+   padding: 2rem 0;
+}
+
+.nav {
+   display: flex;
+}
+
+.nav li {
+   padding: 0  3rem;
+   list-style-type: none;
+}
+
+.shopping-cart i {
+   font-size: 1.5rem;
+}
+
+img {
+   width: 100%;
+   background-color: red;
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+}
+
+.logo i {
+   font-size: 2rem;
+   padding: 0 1rem;
+}
