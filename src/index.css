@@ -7,10 +7,6 @@
 
 body {
    font-family: 'Raleway', sans-serif;
-   background-image: url(./img/geese-background.jpg);
-   background-repeat: no-repeat;
-   background-size: cover;
-   height: 100%;
 }
 
 h1, h2, h3, h4 {

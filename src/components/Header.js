@@ -5,7 +5,7 @@ export default function Header() {
    return (
       <header>
          <div className="logo">
-            <i class="fas fa-tshirt"></i>
+            <i className="fas fa-tshirt"></i>
             <h1>Porch Goose Emporium</h1>
          </div>
             <ul className="nav">
@@ -20,7 +20,7 @@ export default function Header() {
                </li>
             </ul>
             <div className="shopping-cart">
-                 <i class="fas fa-shopping-cart"></i>
+                 <i className="fas fa-shopping-cart"></i>
             </div>
       </header>
    )

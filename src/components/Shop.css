@@ -1,0 +1,17 @@
+.Shop {
+   width: 400px;
+}
+
+.shop-container {
+   display: grid;
+   grid-template-columns: 1fr 1fr 1fr;
+}
+
+.shop-container img {
+   width: 300px;
+   padding: 1rem;
+}
+
+.goose-option {
+   text-align: center;
+}
