@@ -30,7 +30,7 @@ export default function Shop(props) {
       const outfitChoice = e.target.parentElement.childNodes[0].alt
       outfits.map((outfit) => {
          if (outfit.name === outfitChoice) {
-            setOutfits([...outfits, {}])
+            console.log('added to cart')
          }
       })
    }
