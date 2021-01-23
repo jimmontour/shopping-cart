@@ -1,8 +1,19 @@
 import React from 'react'
 import './Header.css'
 import logo from '../img/logo.png'
+import Shop from './Shop'
+import { Link } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 
-export default function Header() {
+export default function Header(props) {
+
+   const [cart, setCart] = useState({items: 0 , total: 0 })
+
+   useEffect(() => {
+      setCart({...cart, items: props.inCart})
+   }, [props.inCart])
+
+   console.log(props)
    return (
       <header>
          <div className="logo">
@@ -11,17 +22,18 @@ export default function Header() {
          </div>
             <ul className="nav">
                <li>
-               <a>Home</a>
+               <Link to="/"><a>Home</a></Link>
                  </li>
               <li>
-               <a>Shop</a>
+               <Link to="/shop"><a>Shop</a></Link>
                  </li>
                <li>
-                  <a>About</a>
+               <Link to="/about"><a>About</a></Link>
                </li>
             </ul>
             <div className="shopping-cart">
-                 <i className="fas fa-shopping-cart"></i>
+               <i className="fas fa-shopping-cart"></i>
+               <p>{cart.items}</p>
             </div>
       </header>
    )

@@ -9,6 +9,7 @@ import Shop from './components/Shop'
 import Cart from './components/Cart'
 import ThankYou from './components/ThankYou'
 import Checkout from './components/ThankYou'
+import About from './components/About'
 
 
 export default function Routes() {
@@ -20,7 +21,7 @@ export default function Routes() {
             <Route exact path="/cart" component={Cart} />
             <Route exact path="/thank-you" component={ThankYou} />
             <Route exact path="/checkout" component={Checkout} />
-
+            <Route exact path="/about" component={About} />
          </Switch>
       </BrowserRouter>
    )

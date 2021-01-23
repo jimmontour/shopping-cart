@@ -1,0 +1,13 @@
+article {
+   width: 700px;
+   margin: 0 auto;
+   padding: 5rem 0;
+}
+
+p {
+   padding-top: 1rem;
+}
+
+.title {
+   text-align: center;
+}

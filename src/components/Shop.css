@@ -15,3 +15,9 @@
 .goose-option {
    text-align: center;
 }
+
+.membership-discount {
+   font-size: .8rem;
+   color: grey;
+   padding-top: .4rem;
+}
