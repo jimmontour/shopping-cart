@@ -1,25 +1,26 @@
-import './App.css';
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Route, Switch } from 'react-router-dom'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Home from './pages/Home'
+import About from './pages/About'
+import Products from './pages/Products'
+import Cart from './pages/Cart'
 
 function App() {
+
   return (
-
     <div className="App">
-          <Header/>
-       <div className="call-to-action">
-         <h1>Get The Hottest in Porch Goose Fashion!</h1>
-         <p>At Porch Goose Emporium, we pride ourselves on supplying the best seasonal outfits for your little friend.  Check out this season's hottest trends:</p>
-         <Link to="/shop">
-            <button>Shop Outfits</button>
-         </Link>
-        </div>
-        <Footer />
+       <Header />
+        <Switch>
+           <Route exact path="/" component={Home} />
+           <Route exact path="/products" component={Products} />
+           <Route exact path="/cart" component={Cart} />
+           <Route exact path="/about" component={About} />
+        </Switch>
+       <Footer />
     </div>
-
   )
-
 }
 
 export default App;

@@ -1,0 +1,49 @@
+header {
+   background-color: #173f5f;
+   color: #f6d55c;
+   display: flex;
+   justify-content: space-around;
+   align-items: center;
+   padding: 1rem;
+}
+
+.logo {
+   display: flex;
+   align-items: center;
+}
+
+.logo img {
+   width: 50px;
+}
+
+nav {
+   display: flex;
+}
+
+nav a {
+      color: #f6d55c;
+      padding: 0 1rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: color .4s ease-in-out;
+}
+
+nav a:hover {
+   color: #ed553b;
+}
+
+.cart {
+   width: 50px;
+   display: flex;
+   align-items: center;
+   justify-content: space-around;
+   transition: color .4s ease-in-out;
+}
+
+.cart:hover {
+   color: #ed553b;
+}
+
+.cart i {
+   font-size: 1.3rem;
+}
