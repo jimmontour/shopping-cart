@@ -2,6 +2,7 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import styles from '../css/Header.css'
 import logo from '../img/logo.png'
+import CartIcon from './CartIcon'
 
 export default function Header(props) {
    return (
@@ -23,10 +24,7 @@ export default function Header(props) {
             </Link>
          </nav>
          <Link to="/cart">
-            <div className="cart">
-               <i class="fas fa-shopping-cart"></i>
-               <p>0</p>
-            </div>
+            <CartIcon />
          </Link>
       </header>
    )

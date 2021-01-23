@@ -1,11 +1,24 @@
 import React from 'react'
-import style from '../css/Products.css'
+import '../css/Products.css'
 import outfits from '../data/outfits'
+import Product from '../components/Product'
 
-export default function Products() {
+export default function Products(props) {
+
    return (
-      <div>
-         <h1>Products</h1>
+      <div className="container">
+         <div className="products-container">
+            {outfits.map((outfit) => {
+               return <Product
+                  src={outfit.src}
+                  name={outfit.name}
+                  price={outfit.price}
+                  description={outfit.description}
+               />
+            })}
+
+
+         </div>
       </div>
    )
 }

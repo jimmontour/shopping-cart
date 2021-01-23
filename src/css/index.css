@@ -26,3 +26,26 @@ a {
 a:hover {
    color: #ed553b;
 }
+
+button {
+   padding: 1rem;
+   border: none;
+   border-radius: 10px;
+   margin: .5rem;
+   background-color: #20639b;
+   color: #fff;
+   font-family: 'Cormorant Garamond', serif;
+   font-weight: 600;
+   font-size: 1.3rem;
+   transform: color .4s ease-in-out;
+}
+
+button:hover {
+   color: #f6d55c;
+}
+
+.container {
+   margin: 4rem auto;
+   width: 980px;
+
+}

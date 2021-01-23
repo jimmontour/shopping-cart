@@ -1,0 +1,19 @@
+
+.hero {
+   text-align: center;
+   height: 100vh;
+   margin-top: 20rem;
+}
+
+.hero h1 {
+   color: #ed553b;
+}
+
+.hero h2 {
+   color: #20639b;
+   margin-top: 1rem;
+}
+
+.hero button {
+   margin-top: 2rem;
+}
