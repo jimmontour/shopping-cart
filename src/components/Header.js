@@ -1,11 +1,12 @@
 import React from 'react'
 import './Header.css'
+import logo from '../img/logo.png'
 
 export default function Header() {
    return (
       <header>
          <div className="logo">
-            <i className="fas fa-tshirt"></i>
+            <img src={logo} alt="Porch Goose Emporium logo"/>
             <h1>Porch Goose Emporium</h1>
          </div>
             <ul className="nav">
