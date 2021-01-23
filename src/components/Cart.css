@@ -1,0 +1,17 @@
+.cart {
+   width: 900px;
+   margin: 3rem auto;
+}
+
+.cart-item {
+   display: flex;
+   align-items: center;
+}
+
+.cart-item-info {
+   display: inline-block;
+}
+
+.cart-item-func {
+   display:  flex;
+}

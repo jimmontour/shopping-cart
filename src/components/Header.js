@@ -31,10 +31,12 @@ export default function Header(props) {
                <Link to="/about"><a>About</a></Link>
                </li>
             </ul>
-            <div className="shopping-cart">
-               <i className="fas fa-shopping-cart"></i>
-               <p>{cart.items}</p>
-            </div>
+            <Link to="cart">
+               <div className="shopping-cart">
+                  <i className="fas fa-shopping-cart"></i>
+                  <p>{cart.items}</p>
+               </div>
+         </Link>
       </header>
    )
 }
