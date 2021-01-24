@@ -5,6 +5,7 @@ import logo from '../img/logo.png'
 import CartIcon from './CartIcon'
 
 export default function Header(props) {
+
    return (
       <header>
          <div className="logo">
@@ -24,7 +25,7 @@ export default function Header(props) {
             </Link>
          </nav>
          <Link to="/cart">
-            <CartIcon />
+            <CartIcon cart={props.cart} />
          </Link>
       </header>
    )
