@@ -18,8 +18,6 @@ export default function Products(props) {
                   addToCart={props.addToCart}
                />
             })}
-
-
          </div>
       </div>
    )
