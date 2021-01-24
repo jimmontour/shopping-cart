@@ -16,14 +16,6 @@ function App(props) {
       list: [],
    });
 
-   const updateCount = (outfit, quantity) => {
-      console.log('update quantity')
-   }
-
-   const updateTotal = (outfit, price) => {
-      console.log('update price')
-   }
-
    const addToCart = (e) => {
       const selection = e.target.parentNode.parentNode.childNodes[0].alt
       outfits.map((outfit) => {
@@ -45,13 +37,31 @@ function App(props) {
       })
    }
 
-   const removeFromCart = (outfit) => {
+   const removeFromCart = (e) => {
+      const selection = e.target.parentNode.parentNode.childNodes[0].childNodes[0].alt
+      const selectionPrice = outfits.map((outfit) => {
+         if (outfit.name === selection) {
+            return outfit.price
+         }
+      })
+      const newArray = cart.list.filter((outfit) => {
+         return outfit.name !== selection
+      })
       setCart({
-         count: 0,
-         total: 0,
-         list: [],
+         count: (cart.count - 1),
+         price: (cart.total - selectionPrice),
+         list: newArray,
       })
    }
+
+   const updateCount = (outfit, quantity) => {
+      console.log('update quantity')
+   }
+
+   const updateTotal = (outfit, price) => {
+      console.log('update price')
+   }
+
 
   return (
     <div className="App">
@@ -62,7 +72,7 @@ function App(props) {
               <Products cart={cart} addToCart={addToCart} />
             </Route>
            <Route exact path="/cart" component={CartSummary} >
-              <CartSummary cart={cart} />
+              <CartSummary cart={cart} removeFromCart={removeFromCart} />
             </Route>
            <Route exact path="/about" component={About} />
         </Switch>
