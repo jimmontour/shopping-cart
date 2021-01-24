@@ -59,19 +59,9 @@ function App(props) {
       const itemToUpdate = cart.list.find((outfit) => {
         return outfit.name === selection
       })
-      setCart({
-         ...cart,
-         list: [
-            cart.list.map((outfit) => {
-               if (outfit === itemToUpdate) {
-                  return {...outfit, count: 5}
-               } else {
-                  return outfit
-               }
-            })
-         ]
-      })
-      console.log(cart)
+      setCart(
+         {...itemToUpdate, count: quantity} 
+         )
    }
 
    const updateTotal = (outfit, price) => {
