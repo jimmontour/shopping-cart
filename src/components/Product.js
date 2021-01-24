@@ -7,7 +7,10 @@ export default function Product(props) {
          <img src={props.src} alt={props.name}/>
          <h3>{props.name}</h3>
          <p>${props.price}</p>
-         <button>Add to Cart</button>
+         <div className="purchase-buttons">
+            <button>Buy Now</button>
+            <button>Add to Cart</button>
+         </div>
       </div>
    )
 }

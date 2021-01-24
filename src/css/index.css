@@ -28,7 +28,7 @@ a:hover {
 }
 
 button {
-   padding: 1rem;
+   padding: 0.5rem 1rem;
    border: none;
    border-radius: 10px;
    margin: .5rem;
