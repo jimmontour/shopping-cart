@@ -1,3 +1,18 @@
 p {
    margin: 1rem 0;
 }
+
+.about-body {
+   display: flex;
+   margin-top: 2rem;
+   height: 60vh;
+}
+
+.about-body img {
+   width: 100%;
+   border-radius: 20px;
+}
+
+.about-content {
+   padding-left: 2rem;
+}

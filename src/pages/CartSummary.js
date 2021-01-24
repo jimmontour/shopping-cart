@@ -10,7 +10,7 @@ export default function Products(props) {
          <h1>Items in Your Cart:</h1>
          <div className="totals">
             <h3>Items: {props.cart.count}</h3>
-            <h3>Total: ${props.cart.total}</h3>
+            <h3>Total: ${props.cart.total.toFixed(2)}</h3>
          </div>
          <hr />
          <div className="summary-items-container">
