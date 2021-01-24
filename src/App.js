@@ -25,8 +25,6 @@ function App(props) {
       })
    }
 
-   console.log(cart)
-
   return (
     <div className="App">
        <Header cart={cart}/>
@@ -35,7 +33,9 @@ function App(props) {
            <Route exact path="/products" component={Products} >
               <Products cart={cart} addToCart={addToCart} />
             </Route>
-           <Route exact path="/cart" component={CartSummary} />
+           <Route exact path="/cart" component={CartSummary} >
+              <CartSummary cart={cart}/>
+            </Route>
            <Route exact path="/about" component={About} />
         </Switch>
        <Footer />

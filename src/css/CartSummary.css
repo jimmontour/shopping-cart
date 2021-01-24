@@ -1,0 +1,20 @@
+.totals {
+   display: flex;
+   width: 200px;
+   justify-content: space-between;
+}
+
+.summary-items-container {
+   display: grid;
+   grid-template-columns:  1fr;
+}
+
+.cart-summary-item {
+   display: flex;
+   align-items: center;
+   margin: 2rem 0;
+}
+
+.cart-summary-item img {
+   width: 200px;
+}
