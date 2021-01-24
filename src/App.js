@@ -53,21 +53,6 @@ function App(props) {
       })
    }
 
-   const updateCount = (e) => {
-      const selection = e.target.attributes.id.value
-      const quantity = parseInt(e.target.value)
-      const itemToUpdate = cart.list.find((outfit) => {
-        return outfit.name === selection
-      })
-      setCart(
-         {...itemToUpdate, count: quantity} 
-         )
-   }
-
-   const updateTotal = (outfit, price) => {
-      console.log('update price')
-   }
-
   return (
     <div className="App">
        <Header cart={cart}/>
@@ -80,7 +65,6 @@ function App(props) {
               <CartSummary
                cart={cart}
                removeFromCart={removeFromCart}
-               updateCount={updateCount}
               />
             </Route>
            <Route exact path="/about" component={About} />

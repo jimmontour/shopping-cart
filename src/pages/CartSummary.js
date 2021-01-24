@@ -1,5 +1,4 @@
 import React from 'react'
-import outfits from '../data/outfits'
 import CartSummaryList from '../components/CartSummaryList'
 import '../css/CartSummary.css'
 import { Link } from 'react-router-dom'
@@ -22,7 +21,6 @@ export default function Products(props) {
                price={outfit.price * outfit.count}
                description={outfit.description}
                removeFromCart={props.removeFromCart}
-               updateCount={props.updateCount}
                />})}
          </div>
          <div className="cart-checkout">
