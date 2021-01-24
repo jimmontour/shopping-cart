@@ -11,9 +11,9 @@ import outfits from './data/outfits'
 function App(props) {
 
    const [cart, setCart] = useState({
+      list: [],
       count: 0,
       total: 0,
-      list: [],
    });
 
    const addToCart = (e) => {
@@ -21,8 +21,6 @@ function App(props) {
       outfits.map((outfit) => {
          if (selection === outfit.name) {
             setCart({
-               count: (cart.count + 1),
-               total: cart.total + outfit.price,
                list: [
                   ...cart.list,
                   {
@@ -32,6 +30,8 @@ function App(props) {
                      count: 1,
                   }
                ],
+               count: (cart.count + 1),
+               total: cart.total + outfit.price,
             })
          }
       })
@@ -39,18 +39,17 @@ function App(props) {
 
    const removeFromCart = (e) => {
       const selection = e.target.parentNode.parentNode.childNodes[0].childNodes[0].alt
-      const selectionPrice = outfits.map((outfit) => {
-         if (outfit.name === selection) {
-            return outfit.price
-         }
-      })
       const newArray = cart.list.filter((outfit) => {
          return outfit.name !== selection
       })
-      setCart({
-         count: (cart.count - 1),
-         price: (cart.total - selectionPrice),
-         list: newArray,
+      outfits.map((outfit) => {
+         if (outfit.name === selection) {
+            setCart({
+               list: newArray,
+               count: (cart.count - 1),
+               total: cart.total - outfit.price
+            })
+         }
       })
    }
 
