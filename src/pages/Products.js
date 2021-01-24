@@ -8,7 +8,8 @@ export default function Products(props) {
    return (
       <div className="container">
          <div className="products-container">
-            {outfits.map((outfit) => {
+            {
+            outfits.map((outfit) => {
                return <Product
                   src={outfit.src}
                   name={outfit.name}
@@ -16,7 +17,8 @@ export default function Products(props) {
                   description={outfit.description}
                   addToCart={props.addToCart}
                />
-            })}
+            })
+            }
          </div>
       </div>
    )
