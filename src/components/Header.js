@@ -24,7 +24,7 @@ export default function Header(props) {
             </Link>
          </nav>
          <Link to="/cart">
-            <CartIcon />
+            <CartIcon cart={props.cart}/>
          </Link>
       </header>
    )

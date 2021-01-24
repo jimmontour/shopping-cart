@@ -5,6 +5,7 @@ import Product from '../components/Product'
 
 export default function Products(props) {
 
+
    return (
       <div className="container">
          <div className="products-container">
@@ -14,6 +15,7 @@ export default function Products(props) {
                   name={outfit.name}
                   price={outfit.price}
                   description={outfit.description}
+                  addToCart={props.addToCart}
                />
             })}
 

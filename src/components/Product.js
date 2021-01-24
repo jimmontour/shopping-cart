@@ -9,7 +9,7 @@ export default function Product(props) {
          <p>${props.price}</p>
          <div className="purchase-buttons">
             <button>Buy Now</button>
-            <button>Add to Cart</button>
+            <button onClick={props.addToCart}>Add to Cart</button>
          </div>
       </div>
    )
