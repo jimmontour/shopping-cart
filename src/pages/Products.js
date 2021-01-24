@@ -5,7 +5,6 @@ import Product from '../components/Product'
 
 export default function Products(props) {
 
-
    return (
       <div className="container">
          <div className="products-container">

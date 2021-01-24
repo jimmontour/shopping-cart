@@ -18,9 +18,10 @@ export default function Products(props) {
                return <CartSummaryList
                name={outfit.name}
                src={outfit.src}
-               price={outfit.price}
+               price={outfit.price * outfit.count}
                description={outfit.description}
                removeFromCart={props.removeFromCart}
+               updateCount={props.updateCount}
                />
             })}
          </div>

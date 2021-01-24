@@ -53,14 +53,30 @@ function App(props) {
       })
    }
 
-   const updateCount = (outfit, quantity) => {
-      console.log('update quantity')
+   const updateCount = (e) => {
+      const selection = e.target.attributes.id.value
+      const quantity = parseInt(e.target.value)
+      const itemToUpdate = cart.list.find((outfit) => {
+        return outfit.name === selection
+      })
+      setCart({
+         ...cart,
+         list: [
+            cart.list.map((outfit) => {
+               if (outfit === itemToUpdate) {
+                  return {...outfit, count: 5}
+               } else {
+                  return outfit
+               }
+            })
+         ]
+      })
+      console.log(cart)
    }
 
    const updateTotal = (outfit, price) => {
       console.log('update price')
    }
-
 
   return (
     <div className="App">
@@ -71,7 +87,11 @@ function App(props) {
               <Products cart={cart} addToCart={addToCart} />
             </Route>
            <Route exact path="/cart" component={CartSummary} >
-              <CartSummary cart={cart} removeFromCart={removeFromCart} />
+              <CartSummary
+               cart={cart}
+               removeFromCart={removeFromCart}
+               updateCount={updateCount}
+              />
             </Route>
            <Route exact path="/about" component={About} />
         </Switch>
