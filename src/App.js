@@ -10,20 +10,11 @@ import outfits from './data/outfits'
 
 function App(props) {
 
-   const [cart, setCart] = useState({count: 0, total: 0, list: []});
-
-   const addToCart = (e) => {
-      const selection = e.target.parentNode.parentNode.childNodes[0].alt
-      outfits.map((outfit) => {
-         if (outfit.name === selection) {
-            setCart({
-               count: (cart.count + 1),
-               total: cart.total + outfit.price,
-               list: [...cart.list, outfit]
-            })
-         }
-      })
-   }
+   const [cart, setCart] = useState({
+      count: 0,
+      total: 0,
+      list: [],
+   });
 
   return (
     <div className="App">
@@ -31,10 +22,10 @@ function App(props) {
         <Switch>
            <Route exact path="/" component={Home} />
            <Route exact path="/products" component={Products} >
-              <Products cart={cart} addToCart={addToCart} />
+              <Products cart={cart} />
             </Route>
            <Route exact path="/cart" component={CartSummary} >
-              <CartSummary cart={cart}/>
+              <CartSummary cart={cart} />
             </Route>
            <Route exact path="/about" component={About} />
         </Switch>

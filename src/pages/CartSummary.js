@@ -5,8 +5,6 @@ import '../css/CartSummary.css'
 
 export default function Products(props) {
 
-   console.log(props)
-
    return (
       <div className="container">
          <h1>Items in Your Cart:</h1>
@@ -17,7 +15,12 @@ export default function Products(props) {
          <hr />
          <div className="summary-items-container">
             {props.cart.list.map((outfit) => {
-               return <CartSummaryList name={outfit.name} src={outfit.src} price={outfit.price} description={outfit.description} />
+               return <CartSummaryList
+               name={outfit.name}
+               src={outfit.src}
+               price={outfit.price}
+               description={outfit.description}
+               />
             })}
          </div>
 

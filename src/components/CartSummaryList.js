@@ -22,7 +22,7 @@ export default function cartSummaryList(props) {
             <option value="">Qty: 8</option>
             <option value="">Qty: 9</option>
          </select>
-         <button>Remove Item</button>
+         <button onClick={props.removeFromCart}>Remove Item</button>
          </div>
       </div>
    )

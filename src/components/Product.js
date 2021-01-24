@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/Product.css'
+import { Link } from 'react-router-dom'
 
 export default function Product(props) {
    return (
