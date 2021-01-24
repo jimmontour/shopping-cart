@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'
 
 function App(props) {
    return (
-      <div className="Home">
+      <div className="main-page">
          <div className="hero">
             <h1>The Greatest In Porch Goose Fashion</h1>
             <h2>We pride ourselves on providing the newest <br />seasonal fashions for your collection.</h2>
@@ -14,7 +14,6 @@ function App(props) {
          </div>
       </div>
    )
-
 }
 
 export default App;
