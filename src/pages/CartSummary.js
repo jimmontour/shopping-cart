@@ -15,11 +15,16 @@ export default function Products(props) {
 
    return (
       <div className="container">
-         <h1>Items in Your Cart:</h1>
-         <div className="totals">
-            <h3>Items: {props.cart.count}</h3>
-            <h3>Total: ${calculateTotal(props.cart)}</h3>
-         </div>
+
+         {props.cart.length === 0
+         ? <h1>There are no items in your cart!</h1>
+         :  <h1>Items in Your Cart:</h1>
+         }
+            <div className="totals">
+               <h3>Items: {props.cart.count}</h3>
+               <h3>Total: ${calculateTotal(props.cart)}</h3>
+            </div>
+
          <hr />
          <div className="summary-items-container">
             {props.cart.map((outfit) => {
