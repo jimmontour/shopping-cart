@@ -13,7 +13,7 @@ function App(props) {
    const [cart, setCart] = useState({
       list: [],
       count: 0,
-      total: 0,
+      total: 0
    });
 
    const addToCart = (e) => {
