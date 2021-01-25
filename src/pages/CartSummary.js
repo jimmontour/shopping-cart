@@ -22,7 +22,7 @@ export default function Products(props) {
          }
             <div className="totals">
                <h3>Items: {props.cart.length}</h3>
-               <h3>Total: ${calculateTotal(props.cart)}</h3>
+               <h3>Total: ${calculateTotal(props.cart).toFixed(2)}</h3>
             </div>
 
          <hr />
