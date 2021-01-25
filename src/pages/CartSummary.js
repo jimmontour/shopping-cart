@@ -21,7 +21,7 @@ export default function Products(props) {
          :  <h1>Items in Your Cart:</h1>
          }
             <div className="totals">
-               <h3>Items: {props.cart.count}</h3>
+               <h3>Items: {props.cart.length}</h3>
                <h3>Total: ${calculateTotal(props.cart)}</h3>
             </div>
 
@@ -34,6 +34,8 @@ export default function Products(props) {
                price={outfit.price * outfit.count}
                description={outfit.description}
                handleRemoveFromCart={props.handleRemoveFromCart}
+               updateCount={props.updateCount}
+               count={outfit.count}
                />})}
          </div>
          <div className="cart-checkout">

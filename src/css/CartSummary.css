@@ -18,3 +18,22 @@
 .cart-summary-item img {
    width: 200px;
 }
+
+.quantity-container {
+   display: flex;
+   justify-content: left;
+   align-items: center;
+}
+
+
+.quantity-container input {
+   width: 20%;
+   height: 2rem;
+   border: none;
+   background-color: lightblue;
+   border-radius: 10px;
+   text-align: center;
+   font-weight: 600;
+   font-family: 'Noto Sans', sans-serif;
+   margin-left: 1rem;
+}

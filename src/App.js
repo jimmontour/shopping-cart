@@ -11,21 +11,22 @@ import outfits from './data/outfits'
 
 function App(props) {
    const [cart, setCart] = useState([]);
+   console.log(cart)
 
    const handleAddToCart = (selection) => {
       outfits.map((outfit) => {
-      if (selection === outfit.name) {
-         setCart([
-            ...cart,
-            {
-               name: outfit.name,
-               price: outfit.price,
-               src: outfit.src,
-               count: 1,
-            },
-         ])
-      }
-   })
+         if (outfit.name === selection) {
+            setCart([
+               ...cart,
+               {
+                  name: outfit.name,
+                  price: outfit.price,
+                  src: outfit.src,
+                  count: 1,
+               }
+            ])
+         }
+      })
    }
 
    const handleRemoveFromCart = (selection) => {
@@ -41,6 +42,13 @@ function App(props) {
       })
    }
 
+   const updateCount = (selection, quantity) => {
+      const newArray = cart.filter((outfit) => {
+         return outfit.name === selection
+      })
+      console.log(newArray)
+   }
+
   return (
     <div className="App">
        <Header cart={cart}/>
@@ -53,6 +61,7 @@ function App(props) {
               <CartSummary
                cart={cart}
                handleRemoveFromCart={handleRemoveFromCart}
+               updateCount={updateCount}
               />
             </Route>
            <Route exact path="/about" component={About} />
