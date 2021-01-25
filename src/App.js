@@ -16,25 +16,25 @@ function App(props) {
       total: 0
    });
 
-   const addToCart = (e) => {
-      const selection = e.target.parentNode.parentNode.childNodes[0].alt
+   const handleAddToCart = (selection) => {
+      console.log(selection)
       outfits.map((outfit) => {
-         if (selection === outfit.name) {
-            setCart({
-               list: [
-                  ...cart.list,
-                  {
-                     name: outfit.name,
-                     price: outfit.price,
-                     src: outfit.src,
-                     count: 1,
-                  }
-               ],
-               count: (cart.count + 1),
-               total: cart.total + outfit.price,
-            })
-         }
-      })
+      if (selection === outfit.name) {
+         setCart({
+            list: [
+               ...cart.list,
+               {
+                  name: outfit.name,
+                  price: outfit.price,
+                  src: outfit.src,
+                  count: 1,
+               }
+            ],
+            count: (cart.count + 1),
+            total: cart.total + outfit.price,
+         })
+      }
+   })
    }
 
    const removeFromCart = (e) => {
@@ -59,7 +59,7 @@ function App(props) {
         <Switch>
            <Route exact path="/" component={Home} />
            <Route exact path="/products" component={Products} >
-              <Products cart={cart} addToCart={addToCart} />
+              <Products cart={cart} handleAddToCart={handleAddToCart} />
             </Route>
            <Route exact path="/cart" component={CartSummary} >
               <CartSummary

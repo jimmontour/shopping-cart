@@ -15,7 +15,7 @@ export default function Products(props) {
                   name={outfit.name}
                   price={outfit.price}
                   description={outfit.description}
-                  addToCart={props.addToCart}
+                  handleAddToCart={props.handleAddToCart}
                />
             })
             }
