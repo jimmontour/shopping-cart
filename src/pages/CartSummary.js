@@ -24,8 +24,8 @@ export default function Products(props) {
                />})}
          </div>
          <div className="cart-checkout">
-            <Link to="/">
-               <button>Checkout</button>
+            <Link to="/checkout">
+               <button >Checkout</button>
             </Link>
             <Link to="/products">
                <button>Continue Shopping</button>

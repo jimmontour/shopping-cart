@@ -6,6 +6,7 @@ import Home from './pages/Home'
 import About from './pages/About'
 import Products from './pages/Products'
 import CartSummary from './pages/CartSummary'
+import CheckOut from './pages/CheckOut'
 import outfits from './data/outfits'
 
 function App(props) {
@@ -68,6 +69,7 @@ function App(props) {
               />
             </Route>
            <Route exact path="/about" component={About} />
+           <Route exact path="/checkout" component={CheckOut} />
         </Switch>
        <Footer />
     </div>
