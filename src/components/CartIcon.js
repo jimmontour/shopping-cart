@@ -4,7 +4,7 @@ export default function CartIcon(props) {
    return (
          <div className="cart">
             <i className="fas fa-shopping-cart"></i>
-            <p>{props.cart.count}</p>
+            <p>{props.cart.length}</p>
          </div>
    )
 }

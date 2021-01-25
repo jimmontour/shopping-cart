@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import { Route, Switch } from "react-router-dom";
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -10,46 +10,33 @@ import CheckOut from './pages/CheckOut'
 import outfits from './data/outfits'
 
 function App(props) {
-
-   const [cart, setCart] = useState({
-      list: [],
-      count: 0,
-      total: 0
-   });
+   const [cart, setCart] = useState([]);
 
    const handleAddToCart = (selection) => {
-      console.log(selection)
       outfits.map((outfit) => {
       if (selection === outfit.name) {
-         setCart({
-            list: [
-               ...cart.list,
-               {
-                  name: outfit.name,
-                  price: outfit.price,
-                  src: outfit.src,
-                  count: 1,
-               }
-            ],
-            count: (cart.count + 1),
-            total: cart.total + outfit.price,
-         })
+         setCart([
+            ...cart,
+            {
+               name: outfit.name,
+               price: outfit.price,
+               src: outfit.src,
+               count: 1,
+            },
+         ])
       }
    })
    }
 
    const handleRemoveFromCart = (selection) => {
-
-      const newArray = cart.list.filter((outfit) => {
+      const newArray = cart.filter((outfit) => {
          return outfit.name !== selection
       })
       outfits.map((outfit) => {
          if (outfit.name === selection) {
-            setCart({
-               list: newArray,
-               count: (cart.count - 1),
-               total: cart.total - outfit.price
-            })
+            setCart(
+               newArray
+            )
          }
       })
    }

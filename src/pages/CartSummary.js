@@ -5,16 +5,24 @@ import { Link } from 'react-router-dom'
 
 export default function Products(props) {
 
+   const calculateTotal = (cart) => {
+      let count = 0;
+      props.cart.map((outfit) => {
+         count = count + outfit.price
+      })
+      return count;
+   }
+
    return (
       <div className="container">
          <h1>Items in Your Cart:</h1>
          <div className="totals">
             <h3>Items: {props.cart.count}</h3>
-            <h3>Total: ${props.cart.total.toFixed()}</h3>
+            <h3>Total: ${calculateTotal(props.cart)}</h3>
          </div>
          <hr />
          <div className="summary-items-container">
-            {props.cart.list.map((outfit) => {
+            {props.cart.map((outfit) => {
                return <CartSummaryList
                name={outfit.name}
                src={outfit.src}
