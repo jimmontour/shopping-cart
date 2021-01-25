@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import styles from '../css/Header.css'
+import '../css/Header.css'
 import logo from '../img/logo.png'
 import CartIcon from './CartIcon'
 
