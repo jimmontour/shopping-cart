@@ -3,6 +3,10 @@ import '../css/CartSummary.css'
 
 export default function cartSummaryList(props) {
 
+   const handleClick = (e) => {
+      const selection = e.target.parentNode.parentNode.childNodes[0].childNodes[0].alt
+      props.handleRemoveFromCart(selection)
+   }
 
    return (
       <div className="cart-summary-item">
@@ -12,7 +16,7 @@ export default function cartSummaryList(props) {
          <div className="item-data">
          <h2>{props.name}</h2>
          <p>{props.price}</p>
-         <button onClick={props.removeFromCart}>Remove Item</button>
+         <button onClick={handleClick}>Remove Item</button>
          </div>
       </div>
    )

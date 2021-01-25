@@ -20,7 +20,7 @@ export default function Products(props) {
                src={outfit.src}
                price={outfit.price * outfit.count}
                description={outfit.description}
-               removeFromCart={props.removeFromCart}
+               handleRemoveFromCart={props.handleRemoveFromCart}
                />})}
          </div>
          <div className="cart-checkout">

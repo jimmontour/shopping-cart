@@ -37,8 +37,8 @@ function App(props) {
    })
    }
 
-   const removeFromCart = (e) => {
-      const selection = e.target.parentNode.parentNode.childNodes[0].childNodes[0].alt
+   const handleRemoveFromCart = (selection) => {
+
       const newArray = cart.list.filter((outfit) => {
          return outfit.name !== selection
       })
@@ -64,7 +64,7 @@ function App(props) {
            <Route exact path="/cart" component={CartSummary} >
               <CartSummary
                cart={cart}
-               removeFromCart={removeFromCart}
+               handleRemoveFromCart={handleRemoveFromCart}
               />
             </Route>
            <Route exact path="/about" component={About} />
