@@ -14,19 +14,35 @@ function App(props) {
    console.log(cart)
 
    const handleAddToCart = (selection) => {
-      outfits.map((outfit) => {
-         if (outfit.name === selection) {
-            setCart([
-               ...cart,
-               {
-                  name: outfit.name,
-                  price: outfit.price,
-                  src: outfit.src,
-                  count: 1,
-               }
-            ])
-         }
-      })
+      // Check for duplicate outfit already in state
+     const duplicate = cart.filter((item) => item.name === selection)
+     const remainingCart = cart.filter((item) => item.name !== selection)
+     if (duplicate.length > 0) {
+        setCart([
+           ...remainingCart,
+           {
+              name: duplicate[0].name,
+              price: duplicate[0].price,
+              src: duplicate[0].src,
+              count: duplicate[0].count + 1,
+           }
+        ])
+     } else {
+         // If no duplicate, create a new object in Cart State
+         outfits.map((outfit) => {
+            if (outfit.name === selection) {
+               setCart([
+                  ...cart,
+                  {
+                     name: outfit.name,
+                     price: outfit.price,
+                     src: outfit.src,
+                     count: 1,
+                  }
+               ])
+            }
+         })
+     }
    }
 
    const handleRemoveFromCart = (selection) => {
@@ -43,10 +59,6 @@ function App(props) {
    }
 
    const updateCount = (selection, quantity) => {
-      const newArray = cart.filter((outfit) => {
-         return outfit.name === selection
-      })
-      console.log(newArray)
    }
 
   return (
