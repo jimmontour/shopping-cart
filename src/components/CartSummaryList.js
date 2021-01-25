@@ -17,8 +17,11 @@ export default function cartSummaryList(props) {
          <h2>{props.name}</h2>
          <p>${props.price.toFixed(2)}</p>
          <div className="quantity-container">
-            <p>Qty:</p>
-            <input type="text" value={props.count}/>
+            <div className="quantity-display">
+               <i class="fas fa-chevron-up"></i>
+               <input type="text" value={props.count}/>
+               <i class="fas fa-chevron-down"></i>
+            </div>
          </div>
 
          <button onClick={handleClick}>Remove Item</button>
