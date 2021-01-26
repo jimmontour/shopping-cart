@@ -5,14 +5,6 @@ import { Link } from 'react-router-dom'
 
 export default function Products(props) {
 
-   const calculateTotal = (cart) => {
-      let count = 0;
-      props.cart.map((outfit) => {
-         count = count + outfit.price
-      })
-      return count;
-   }
-
    return (
       <div className="container">
 
@@ -21,8 +13,6 @@ export default function Products(props) {
          :  <h1>Items in Your Cart:</h1>
          }
             <div className="totals">
-               <h3>Items: {props.cart.length}</h3>
-               <h3>Total: ${calculateTotal(props.cart).toFixed(2)}</h3>
             </div>
 
          <hr />

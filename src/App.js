@@ -57,17 +57,14 @@ function App(props) {
       })
    }
 
-   const updateCount = (selection, change) => {
-      console.log(selection,change)
-      setCart([
-         cart.map((item) => {
-            if (item.name === selection) {
-               console.log({...item, count: item.count + change})
-            } else {
-               console.log( item )
-            }
-         })
-      ])
+   const updateCount = async (selection, change) => {
+      const productToUpdate = cart.filter((item) => item.name === selection)
+      const remainingCart = cart.filter((item) => item.name !== selection)
+      await setCart(
+         ...remainingCart,
+         {...productToUpdate, count: productToUpdate.count + change}
+      )
+
    }
 
   return (
