@@ -11,7 +11,6 @@ import outfits from './data/outfits'
 
 function App(props) {
    const [cart, setCart] = useState([]);
-   console.log(cart)
 
    const handleAddToCart = (selection) => {
       // Check for duplicate outfit already in state
@@ -58,7 +57,17 @@ function App(props) {
       })
    }
 
-   const updateCount = (selection, quantity) => {
+   const updateCount = (selection, change) => {
+      console.log(selection,change)
+      setCart([
+         cart.map((item) => {
+            if (item.name === selection) {
+               console.log({...item, count: item.count + change})
+            } else {
+               console.log( item )
+            }
+         })
+      ])
    }
 
   return (

@@ -3,9 +3,19 @@ import '../css/CartSummary.css'
 
 export default function cartSummaryList(props) {
 
-   const handleClick = (e) => {
-      const selection = e.target.parentNode.parentNode.childNodes[0].childNodes[0].alt
+   const handleRemoveBtn = (e) => {
+      const selection = e.target.attributes.id.nodeValue
       props.handleRemoveFromCart(selection)
+   }
+
+   const handleIncrement = (e) => {
+      const selection = e.target.attributes.id.nodeValue
+      if (e.target.attributes[0].nodeValue === "fas fa-chevron-up") {
+         props.updateCount(selection, 1)
+      }
+      if (e.target.attributes[0].nodeValue === "fas fa-chevron-down") {
+         props.updateCount(selection, (-1))
+      }
    }
 
    return (
@@ -18,13 +28,13 @@ export default function cartSummaryList(props) {
          <p>${props.price.toFixed(2)}</p>
          <div className="quantity-container">
             <div className="quantity-display">
-               <i class="fas fa-chevron-up"></i>
-               <input type="text" value={props.count}/>
-               <i class="fas fa-chevron-down"></i>
+               <i className="fas fa-chevron-up" id={props.name} onClick={handleIncrement}></i>
+               <input type="text" value={props.count} id={props.name}/>
+                  <i className="fas fa-chevron-down" id={props.name} onClick={handleIncrement}></i>
             </div>
          </div>
 
-         <button onClick={handleClick}>Remove Item</button>
+         <button onClick={handleRemoveBtn} id={props.name}>Remove Item</button>
          </div>
       </div>
    )
